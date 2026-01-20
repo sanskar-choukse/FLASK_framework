@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}MY Site{%endblock%}</title>
+</head>
+<body>
+<header>   
+    <h1>Welcome to my site</h1>
+    <nav>
+        <a href="/">home</a>
+    </nav>
+</header>
+
+ <!-- when we use flash,so we will use:with message=get_flashed_message()  -->
+{% with message = get_flashed_messages()%}
+{% if message %}
+<ul style="color: green;">
+    {% for msg in message %}
+        <li>{{msg}}</li>    
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+<main>
+    {% block content %}{% endblock %}  
+</main>
+
+<footer>
+    <p>2026 ipsum dolor sit amet consectetur adipisicing elit. Accusamus consectetur asperiores atque quas quam possimus?</p>
+</footer>
+</body>
+</html>
