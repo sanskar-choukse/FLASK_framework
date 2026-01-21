@@ -1,0 +1,9 @@
+Without Flask-WTF:
+Manual validation
+More code
+CSRF risk
+
+With Flask-WTF:
+Auto validation
+Secure forms
+Reusable form classes

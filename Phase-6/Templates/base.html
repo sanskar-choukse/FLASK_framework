@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Flask-WTF Registration Form{% endblock %}</title>
+</head>
+<body>
+
+<!-- {% with message = get_flash_message() %} use of this when we will use of flash in python-->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, msg in messages %}
+      <p style="color: green;">{{ msg }}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}   <!-- ✅ THIS WAS MISSING -->
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+</body>
+</html>
